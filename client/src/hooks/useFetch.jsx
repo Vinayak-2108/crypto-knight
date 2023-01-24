@@ -11,6 +11,9 @@ const useFetch = ({ keyword }) => {
           .split(" ")
           .join("")}&limit=1`
       );
+      console.log(`https://api.giphy.com/v1/gifs/search?api_key=${API_KEY}&q=${keyword
+      .split(" ")
+      .join("")}&limit=1`);
       console.log("Yes");
       const { data } = await response.json();
       setGifUrl(data[0]?.images?.downsized_medium?.url);
